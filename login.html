@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <h2>Login</h2>
+        <form id="loginform">
+          <input type="text" id="email" placeholder="email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+      </div>
+    </div>
+    <script>
+      let loginForm = document.getElementById("loginform");
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let user = users.find((u) => u.email === email && u.password === password);
+
+        if (user) {
+          alert("Login Successful");
+        } else {
+          alert("Invalid username or password");
+        }
+      });
+    </script>
+  </body>
+</html>
